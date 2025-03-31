@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>แสดงภาพจาก Google</title>
+    <style>
+        body {
+            background-color: #800080; /* พื้นหลังสีม่วง */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .message {
+            color: white; /* ข้อความสีขาว */
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px black; /* ขอบดำ */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- แสดงภาพจาก Google -->
+    <div class="image-container">
+        <img src="https://images.app.goo.gl/kgZG" alt="ภาพจาก Google">
+    </div>
+    
+    <!-- ข้อความ "เป็นไปตามแผน" -->
+    <div class="message">
+        เป็นไปตามแผน
+    </div>
+</body>
+</html>
